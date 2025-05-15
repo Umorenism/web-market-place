@@ -88,7 +88,7 @@ export const FooterTab = () => {
     {
       icon: <HomeIcon className="w-6 h-6" />,
       label: "Home",
-      path: "/home",
+      path: "/",
     },
     {
       icon: (
@@ -153,9 +153,9 @@ export const FooterTab = () => {
           })}
         </div>
 
-        <div className="w-full h-[34px] flex items-end justify-center pb-2">
+        {/* <div className="w-full h-[34px] flex items-end justify-center pb-2">
           <div className="w-[134px] h-[5px] bg-[#b9b6b6] rounded-full" />
-        </div>
+        </div> */}
       </div>
     </nav>
   );

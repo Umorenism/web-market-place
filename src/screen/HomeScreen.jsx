@@ -4,7 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { FooterTab } from "../Footer/FooterTab";
 import { HomePage } from "../pages/HomePage";
-import DiscoverPage from "../pages/DiscoverPage";
+import{ DiscoverPage} from "../pages/DiscoverPage";
 import CreatePage from "../pages/CreatePage";
 import { AirdropPage } from "../pages/AirdropPage";
 import ProfilePage from "../pages/ProfilePage";

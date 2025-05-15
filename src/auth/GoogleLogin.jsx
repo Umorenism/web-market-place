@@ -11,7 +11,7 @@ export const GoogleLogin = ({ onLogin }) => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      if (onLogin) onLogin();
+      if (onLogin) onLogin("/");
     }, 2000); // Simulated login delay
   };
 

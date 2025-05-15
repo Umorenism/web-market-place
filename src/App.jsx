@@ -4,7 +4,7 @@ import { HomeScreen } from './screen/HomeScreen';
 
 
 export default function App() {
-  const [session, setSession] = useState(true); // false = not logged in yet
+  const [session, setSession] = useState(false); // false = not logged in yet
 
   return (
     <div>
