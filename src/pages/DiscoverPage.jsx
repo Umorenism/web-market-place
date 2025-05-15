@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowLeftIcon } from "lucide-react";
 import { TabsComponent } from "../component/TabsComponent";
-import sort from "../assets/sort.png";
+import sort from "../assets/Sort.png";
 import { DiscoveryComponent } from "../component/DiscoveryComponent";
 
 export const DiscoverPage = () => {
