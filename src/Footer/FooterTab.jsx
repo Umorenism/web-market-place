@@ -152,10 +152,6 @@ export const FooterTab = () => {
             );
           })}
         </div>
-
-        {/* <div className="w-full h-[34px] flex items-end justify-center pb-2">
-          <div className="w-[134px] h-[5px] bg-[#b9b6b6] rounded-full" />
-        </div> */}
       </div>
     </nav>
   );

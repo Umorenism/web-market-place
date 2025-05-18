@@ -43,7 +43,7 @@ export const DiscoveryComponent = () => {
       amount: "0.1",
       currency: "USDT",
       popularity: "588k",
-      progressPercentage: 0,
+      progressPercentage: 80,
       status: "Finished",
     },
     {
@@ -53,19 +53,19 @@ export const DiscoveryComponent = () => {
       amount: "0.1",
       currency: "USDT",
       popularity: "658",
-      progressPercentage: 10,
+      progressPercentage: 30,
       status: "Active",
     },
   ];
 
   return (
-    <section className="flex flex-col w-full gap-6">
+    <section className="flex flex-col w-full gap-6 items-center">
       {taskCards.map((card) => (
         <Card
           key={card.id}
-          className="relative h-[92px] bg-[#08000f] rounded-xl w-full overflow-hidden border-0"
+          className="relative h-[92px] bg-[#08000f]  rounded-xl w-full ml-2 mr-2 overflow-hidden border-0"
         >
-          <CardContent className="p-0">
+          <CardContent className="p-0 ">
             <div
               className="absolute w-[61px] h-[61px] top-[13px] left-[17px] rounded-xl bg-cover bg-center"
               style={{ backgroundImage: `url(${card.iconUrl})` }}
@@ -98,14 +98,14 @@ export const DiscoveryComponent = () => {
               </div>
             </div>
 
-            <div className="absolute w-[230px] h-2.5 top-[67px] left-[99px] bg-white rounded-xl overflow-hidden">
+            <div className="absolute w-[230px] h-2.5 top-[67px]  left-[100px] bg-white rounded-xl overflow-hidden">
               <Progress
                 value={card.progressPercentage}
                 className="h-2.5 rounded-[48px] [background:linear-gradient(90deg,rgba(59,130,246,1)_0%,rgba(147,51,234,1)_81%)]"
               />
             </div>
 
-            <div className="inline-flex items-center gap-[3px] absolute top-1 left-[295px]">
+            <div className="inline-flex items-center gap-[3px] absolute mb-2 top-1 left-[292px]">
               {card.status === "Active" && (
                 <div className="relative w-1.5 h-1.5 bg-[#42bb51] rounded-[3px]" />
               )}

@@ -16,18 +16,18 @@ export const GoogleLogin = ({ onLogin }) => {
   };
 
   return (
-    <div className="bg-[#0b0f1d] min-h-screen flex justify-center items-center">
+    <div className="bg-[#0b0f1d] h-screen flex justify-center items-center">
       <div className="relative bg-bgdark-mode w-[412px] h-[917px] rounded-xl overflow-hidden shadow-xl">
         {/* Background Graphic */}
         <div className="absolute inset-0 h-[611px] bg-[url('https://c.animaapp.com/map5mst0K74gOd/img/vector-1.svg')] bg-cover" />
 
         {/* Logo */}
-        <Card className="absolute top-[269px] left-1/2 transform -translate-x-1/2 w-[92px] h-[92px] shadow-[0px_18px_30.6px_#00000080] bg-cover border-none bg-[url('https://c.animaapp.com/map5mst0K74gOd/img/subtract.svg')]">
-          <img src={logo} alt="Logo" className="w-[100px] h-[100px] mt-5 mx-auto" />
+        <Card className="absolute top-[269px] left-1/2 transform -translate-x-1/2 w-[122px] h-[122px] shadow-[0px_18px_30.6px_#00000080] bg-cover border-none bg-[url('https://c.animaapp.com/map5mst0K74gOd/img/subtract.svg')]">
+          <img src={logo} alt="Logo" className="w-[150px] h-[150px]  object-contain" />
         </Card>
 
         {/* Heading */}
-        <div className="absolute w-[90%] max-w-[354px] top-[460px] left-1/2 transform -translate-x-1/2 text-white text-center font-semibold text-lg leading-relaxed">
+        <div className="absolute w-[90%] max-w-[500px] top-[480px] left-1/2 transform -translate-x-1/2 text-white text-center font-semibold text-lg leading-relaxed">
           Make good use of your time
           <br />
           Sign in to Sherdion and start
@@ -47,7 +47,7 @@ export const GoogleLogin = ({ onLogin }) => {
           <Button
             onClick={handleGoogleLogin}
             variant="outline"
-            className="absolute bottom-[150px] left-1/2 transform -translate-x-1/2 w-[361px] h-[58px] rounded-lg border border-[#abd7f1] bg-gradient-to-t from-[#eaf5fb] to-[#eaf5fb] p-0"
+            className="absolute bottom-[180px] left-1/2 transform -translate-x-1/2 w-[300px] h-[58px] rounded-lg border border-[#abd7f1] bg-gradient-to-t from-[#eaf5fb] to-[#eaf5fb] p-0"
           >
             <div className="flex items-center justify-center gap-4 w-full">
               <img src={google} alt="Google Icon" className="w-6 h-6" />
