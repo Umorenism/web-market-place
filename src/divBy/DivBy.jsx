@@ -47,11 +47,7 @@ export const DivByAnima = () => {
                     </span>
                   </div>
 
-                  {/* <img
-                    className="w-[50px] h-[21px] object-cover"
-                    alt="Element mins"
-                    src="https://c.animaapp.com/map8oozdb5hcEE/img/25-mins-4.png"
-                  /> */}
+                 
                   <p className="text-[#8a878780]">{item.time}</p>
                 </div>
               ))}

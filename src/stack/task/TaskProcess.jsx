@@ -3,20 +3,18 @@ import logo from "../../assets/taskpro.png";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 import about from "../../assets/abouticon.png";
 import tel from "../../assets/tel.png";
-import { FaAngleRight, FaAngleDown } from "react-icons/fa"; // ✅ Fixed import
+import { FaAngleRight, FaAngleDown } from "react-icons/fa"; 
 import React, { useState } from "react";
-import { Link} from "react-router-dom"; // ✅ Import
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion"; // Import motion for animations
 
 export default function TaskProcess() {
-  const [openItemId, setOpenItemId] = useState(null); // track open item
-  // const navigate = useNavigate(); // ✅ Hook
+  const [openItemId, setOpenItemId] = useState(null);
 
   const toggleDropdown = (id) => {
     setOpenItemId((prev) => (prev === id ? null : id));
-    //  navigate(`/active-task/${id}`);
   };
 
-  // ✅ Added `description` to each item
   const socialLinks = [
     {
       id: 1,
@@ -65,8 +63,13 @@ export default function TaskProcess() {
       </header>
 
       <div className="flex-col flex">
-        {/* Card */}
-        <div className="bg-[#060606] w-full max-w-[412px] h-[150px] mt-24 rounded-md flex items-center p-4 gap-4">
+        {/* Card with animation */}
+        <motion.div
+          className="bg-[#060606] w-full max-w-[412px] h-[150px] mt-24 rounded-md flex items-center p-4 gap-4"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="h-[100px] w-[100px] flex-shrink-0">
             <img
               src={logo}
@@ -94,10 +97,15 @@ export default function TaskProcess() {
               />
             </ProgressPrimitive.Root>
           </div>
-        </div>
+        </motion.div>
 
         {/* Project Info */}
-        <div className="mt-5">
+        <motion.div
+          className="mt-5"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <h1 className="text-white font-[700]">Canto Gaming</h1>
           <p className="text-white mt-2">
             Gamification redefined with Canto, where fun and fund meets
@@ -106,12 +114,23 @@ export default function TaskProcess() {
             <button className="text-white">About</button>
             <img src={about} alt="" />
           </div>
-        </div>
+        </motion.div>
 
-        {/* Accordion Dropdown Section */}
-        <div className="mt-5 min-h-[400px] space-y-3">
+        {/* Accordion Dropdown Section with animation */}
+        <motion.div
+          className="mt-5 min-h-[400px] space-y-3"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           {socialLinks.map((item) => (
-            <div key={item.id} className="bg-[#2C2C30] p-3 rounded-sm">
+            <motion.div
+              key={item.id}
+              className="bg-[#2C2C30] p-3 rounded-sm"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <div
                 className="flex items-center justify-between cursor-pointer"
                 onClick={() => toggleDropdown(item.id)}
@@ -131,25 +150,34 @@ export default function TaskProcess() {
                 )}
               </div>
 
-              {/* Accordion Content */}
+              {/* Accordion Content with animation */}
               {openItemId === item.id && (
-                <div className="text-white mt-2 text-sm px-2">
+                <motion.div
+                  className="text-white mt-2 text-sm px-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4 }}
+                >
                   {item.description}
-                </div>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
-        
-
-        <div className="w-full flex justify-center items-center mt-6 mb-6">
+        {/* Start Task Button with animation */}
+        <motion.div
+          className="w-full flex justify-center items-center mt-6 mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+        >
           <Link to="/active-task" className="w-full flex justify-center">
             <button className="w-[90%] max-w-[360px] py-3 rounded-md bg-blue-600 text-white text-base font-semibold transition duration-200 hover:bg-blue-700 shadow-md">
               Start Task
             </button>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

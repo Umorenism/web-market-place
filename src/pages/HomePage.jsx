@@ -1,9 +1,4 @@
-
-
-
-
-
-
+import { useState } from "react";
 import { BellIcon, EyeIcon } from "lucide-react";
 import { DivByAnima } from "../divBy/DivBy";
 import { FrameByAnima } from "../frame/Frame";
@@ -11,10 +6,17 @@ import { FrameWrapperByAnima } from "../frame/FrameWrapper";
 import { RiSettingsLine } from "react-icons/ri";
 
 export const HomePage = () => {
+  // State to track whether the balance is visible or hidden
+  const [isBalanceVisible, setIsBalanceVisible] = useState(true);
+
+  // Function to toggle the visibility of the balance
+  const toggleBalanceVisibility = () => {
+    setIsBalanceVisible((prevState) => !prevState);
+  };
+
   return (
     <div className="bg-[#0b0f1d] flex justify-center w-full overflow-x-hidden min-h-screen animate-fadeIn">
       <div className="bg-bgdark-mode w-full max-w-[412px] min-h-screen relative flex flex-col">
-
         {/* Header */}
         <div className="fixed top-0 w-full max-w-[412px] z-10 bg-[#0b0f1d] px-4 py-3 shadow-md">
           <div className="flex justify-between items-center">
@@ -41,10 +43,16 @@ export const HomePage = () => {
           <div className="mb-6">
             <div className="flex items-center gap-2">
               <h2 className="text-white font-bold text-base">Total Balance</h2>
-              <EyeIcon className="w-4 h-4 text-white mt-[2px]" />
+              <button onClick={toggleBalanceVisibility}>
+                <EyeIcon className="w-4 h-4 text-white mt-[2px]" />
+              </button>
             </div>
-            <h1 className="text-white text-2xl font-bold mt-1">$0.65</h1>
-            <p className="text-[#a4a4a4] font-bold text-sm">0.64 USDT</p>
+            <h1 className="text-white text-2xl font-bold mt-1">
+              {isBalanceVisible ? "$0.65" : "****"}
+            </h1>
+            {isBalanceVisible && (
+              <p className="text-[#a4a4a4] font-bold text-sm">0.64 USDT</p>
+            )}
           </div>
 
           {/* Frame Sections */}
