@@ -1,18 +1,18 @@
 
 
 
+
+
+
 import { BellIcon, EyeIcon } from "lucide-react";
-
 import { DivByAnima } from "../divBy/DivBy";
-
 import { FrameByAnima } from "../frame/Frame";
 import { FrameWrapperByAnima } from "../frame/FrameWrapper";
-
 import { RiSettingsLine } from "react-icons/ri";
 
 export const HomePage = () => {
   return (
-    <div className="bg-[#0b0f1d] flex justify-center w-full overflow-x-hidden min-h-screen">
+    <div className="bg-[#0b0f1d] flex justify-center w-full overflow-x-hidden min-h-screen animate-fadeIn">
       <div className="bg-bgdark-mode w-full max-w-[412px] min-h-screen relative flex flex-col">
 
         {/* Header */}
