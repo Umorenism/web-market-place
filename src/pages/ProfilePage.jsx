@@ -1,13 +1,9 @@
 
-
-
-
-
 import { ArrowLeftIcon, CameraIcon } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-// Mocked authentication state (you can replace this with actual authentication logic)
+
 const mockAuth = { isAuthenticated: true, user: { name: "John Doe", walletAddress: "bddyygeygygesaadsdsfsfsffttettdte" } };
 
 export default function ProfilePage() {

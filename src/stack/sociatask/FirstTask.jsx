@@ -1,12 +1,19 @@
 import { ArrowLeftIcon } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function FirstTask() {
+  const navigate = useNavigate()
+    
+        const handleGoBack = () => {
+        navigate(-1); // This will go back to the previous page in the browser history
+      };
+  
   return (
     <div className="bg-[#0b0f1d] flex justify-center min-h-screen">
       <div className="relative w-full max-w-[412px] flex flex-col p-2">
         {/* Header */}
         <header className="fixed top-0 left-0 w-full max-w-[412px] z-50 bg-[#0b0f1d] px-4 py-3 shadow-md flex items-center gap-4">
-          <button className="bg-transparent border-none p-0">
+          <button className="bg-transparent border-none p-0"  onClick={handleGoBack}>
             <ArrowLeftIcon className="w-6 h-6 text-white" />
           </button>
           <h1 className="text-white text-lg font-bold">Create pool</h1>

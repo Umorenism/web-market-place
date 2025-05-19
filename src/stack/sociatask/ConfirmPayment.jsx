@@ -4,12 +4,17 @@ import { Link } from "react-router-dom";
 
 
 export default function ConfirmPayment() {
+  const navigate = useNavigate()
+    
+        const handleGoBack = () => {
+        navigate(-1); // This will go back to the previous page in the browser history
+      };
    
   return (
     <div className="bg-[#0b0f1d] flex justify-center min-h-screen">
       <div className="relative w-full max-w-[412px] flex flex-col ">
         {/* Header */}
-        <header className="fixed top-0 left-0 w-full max-w-[412px] z-50 bg-[#0b0f1d] px-4 py-3 shadow-md flex items-center gap-4">
+        <header className="fixed top-0 left-0 w-full max-w-[412px] z-50 bg-[#0b0f1d] px-4 py-3 shadow-md flex items-center gap-4" onClick={handleGoBack}>
           <button className="bg-transparent border-none p-0">
             <ArrowLeftIcon className="w-6 h-6 text-white" />
           </button>
